@@ -7,55 +7,47 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React from 'react';
-import App from '../components/App';
+import React from 'react'
+import App from '../components/App'
 
 // Child routes
-import home from './home';
-import login from './login';
-import table from './dashboardPages/tables';
-import button from './dashboardPages/buttons';
-import flotcharts from './dashboardPages/flotCharts';
-import forms from './dashboardPages/forms';
-import grid from './dashboardPages/grid';
-import icons from './dashboardPages/icons';
-import morrisjscharts from './dashboardPages/morrisjsCharts';
-import notification from './dashboardPages/notification';
-import panelwells from './dashboardPages/panelWells';
-import typography from './dashboardPages/typography';
-import blank from './dashboardPages/blank';
-import error from './error';
+import home from './home'
+import login from './login'
+import table from './dashboardPages/tables'
+import button from './dashboardPages/buttons'
+import flotcharts from './dashboardPages/flotCharts'
+import grid from './dashboardPages/grid'
+import icons from './dashboardPages/icons'
+import morrisjscharts from './dashboardPages/morrisjsCharts'
+import notification from './dashboardPages/notification'
+import panelwells from './dashboardPages/panelWells'
+import typography from './dashboardPages/typography'
+import blank from './dashboardPages/blank'
+import error from './error'
 
-import Header from '../components/Header';
+import Header from '../components/Header'
 
 export default [
-
   {
     path: '/login',
-    children: [
-      login,
-    ],
+    children: [login],
     async action({ next, render, context }) {
-      const component = await next();
-      if (component === undefined) return component;
-      return render(
-        <App context={context}>{component}</App>
-      );
-    },
+      const component = await next()
+      if (component === undefined) return component
+      return render(<App context={context}>{component}</App>)
+    }
   },
-
 
   {
     path: '/',
 
-  // keep in mind, routes are evaluated in order
+    // keep in mind, routes are evaluated in order
     children: [
       home,
       // contact,
       table,
       button,
       flotcharts,
-      forms,
       grid,
       icons,
       morrisjscharts,
@@ -67,14 +59,14 @@ export default [
 
       // place new routes before...
       // content,
-      error,
+      error
     ],
 
     async action({ next, render, context }) {
       // console.log('inside dashboard');
-      const component = await next();
+      const component = await next()
       // console.log('inside dasdboard component', component);
-      if (component === undefined) return component;
+      if (component === undefined) return component
       return render(
         <div>
           <Header />
@@ -82,22 +74,18 @@ export default [
             <App context={context}>{component}</App>
           </div>
         </div>
-      );
-    },
+      )
+    }
   },
   {
     path: '/error',
-    children: [
-      error,
-    ],
+    children: [error],
     async action({ next, render, context }) {
       // console.log('inside error');
-      const component = await next();
+      const component = await next()
       // console.log('inside error with component', component);
-      if (component === undefined) return component;
-      return render(
-        <App context={context}>{component}</App>
-      );
-    },
-  },
-];
+      if (component === undefined) return component
+      return render(<App context={context}>{component}</App>)
+    }
+  }
+]
