@@ -9,13 +9,14 @@ Find out more [Free React.js and React Native Themes at StartReact.com](http://w
 ## [Demo](http://sb-admin-react.geekydev.com:3009/)
 
 ## Installation
+
 ####1. Clone this project or Download that ZIP file
 
 ```sh
 $ git clone https://github.com/start-react/sb-admin-react.git
 ```
 
-####2.  Make sure you have [npm](https://www.npmjs.org/) installed globally
+####2. Make sure you have [npm](https://www.npmjs.org/) installed globally
 
 More details here
 https://nodejs.org/en/download/
@@ -25,29 +26,27 @@ https://nodejs.org/en/download/
 ```sh
 $ cd `project-directory`
 ```
+
 ```sh
 $ npm install
 ```
+
 ```sh
 $ npm start
 ```
 
 ####4. To build
+
 ```sh
 $ npm run build
 ```
 
 ####5. To clean up old build products
+
 ```sh
 $ npm run clean
 ```
 
-## Roadmap
-
-- Add sample AJAX calls (using Flux / Reflux) and make the components more modular
-- Lazy loading of Pages
-- MobX integration
-
-
 ### Automation tools used
-- [Webpack](https://webpack.github.io/)
+
+* [Webpack](https://webpack.github.io/)
